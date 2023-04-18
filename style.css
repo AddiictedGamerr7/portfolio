@@ -1,0 +1,240 @@
+/* Global styles */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,700;1,400&family=Oswald:wght@400;600&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  margin: 0px;
+}
+
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+/* Header styles */
+main {
+  background-color: #eeeef0ba;
+}
+main:after {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(https://images.unsplash.com/photo-1449247709967-d4461a6a6103?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index: -1;
+}
+
+
+header {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  z-index: 9999;
+}
+ 
+header.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+header.sticky + .content {
+  padding-top: 60px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav li:last-child {
+  margin-right: 0;
+}
+
+nav a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  text-decoration: none;
+}
+
+nav a:after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  transition: 0.3s; 
+}
+
+
+nav a:hover:after {
+  width: 100%;
+  background-color: #0066cc;
+}
+
+nav a:hover {
+  color: #0066cc;
+}
+
+/* Main content styles */
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  position: relative;
+  font-family: 'Oswald', sans-serif;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Footer styles */
+
+footer {
+  background-color: #f7f7f7;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+  color: #999;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-flow: dense;
+  gap: 10px;
+}
+
+.portfolio-grid img {
+  width: 100%;
+}
+
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-item-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.portfolio-item-overlay a {
+  text-decoration: none;
+  color: white;
+}
+
+.portfolio-item-overlay .link {
+  text-decoration: underline;
+  color: #0066cc;
+}
+
+.portfolio-item-overlay-content {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.portfolio-item-background {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: 0.3s;
+}
+
+.portfolio-item:hover .portfolio-item-background {
+  transform: scale(1.1);
+}
+
+.portfolio-item:hover .portfolio-item-overlay {
+  opacity: 1;
+}
+
+/* X-Small devices (portrait phones, less than 576px) */
+/* No media query for `xs` since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  img {
+    width: auto;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+}
