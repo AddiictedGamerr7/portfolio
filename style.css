@@ -1,12 +1,12 @@
 /* Global styles */
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,700;1,400&family=Oswald:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,700;1,400&family=Oswald:wght@400;600&display=swap");
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 16px;
   line-height: 1.5;
   color: #333;
@@ -23,13 +23,14 @@ main {
   background-color: #eeeef0ba;
 }
 main:after {
-  content: '';
+  content: "";
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: url(https://images.unsplash.com/photo-1449247709967-d4461a6a6103?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80) no-repeat center center fixed; 
+  background: url(https://images.unsplash.com/photo-1449247709967-d4461a6a6103?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80)
+    no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -37,14 +38,13 @@ main:after {
   z-index: -1;
 }
 
-
 header {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
   z-index: 9999;
 }
- 
+
 header.sticky {
   position: fixed;
   top: 0;
@@ -80,15 +80,14 @@ nav a {
 }
 
 nav a:after {
-  content: '';
+  content: "";
   position: absolute;
   height: 2px;
   bottom: -5px;
   left: 0;
   width: 0%;
-  transition: 0.3s; 
+  transition: 0.3s;
 }
-
 
 nav a:hover:after {
   width: 100%;
@@ -115,7 +114,7 @@ h1 {
   font-size: 36px;
   margin-bottom: 20px;
   position: relative;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 
 p {
@@ -152,18 +151,18 @@ img {
   gap: 10px;
 }
 
-.portfolio-grid img {
+.portfolio-grid :is(img, video) {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-
 
 .portfolio-item {
   position: relative;
-  overflow: hidden;
 }
 
 .portfolio-item-overlay {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 1);
   position: absolute;
   top: 0;
   left: 0;
@@ -171,7 +170,7 @@ img {
   height: 100%;
   z-index: 1;
   opacity: 0;
-  transition: 0.3s;
+  transition: 0.3s ease-in-out;
 }
 
 .portfolio-item-overlay a {
@@ -195,11 +194,7 @@ img {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  transition: 0.3s;
-}
-
-.portfolio-item:hover .portfolio-item-background {
-  transform: scale(1.1);
+  transition: 0.3s ease-in-out;
 }
 
 .portfolio-item:hover .portfolio-item-overlay {
@@ -224,10 +219,6 @@ img {
 @media (min-width: 992px) {
   .portfolio-grid {
     grid-template-columns: repeat(4, 1fr);
-  }
-
-  img {
-    width: auto;
   }
 }
 
